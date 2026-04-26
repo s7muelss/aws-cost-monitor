@@ -1,0 +1,36 @@
+{
+  "name": "aws-cost-alert",
+  "version": "1.0.0",
+  "description": "Monitor AWS costs and get Slack/email alerts before your bill explodes 🚨",
+  "main": "dist/index.js",
+  "bin": {
+    "aws-cost-alert": "./dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/cli/index.ts check",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest --coverage",
+    "package": "npm run build && zip -r function.zip dist node_modules"
+  },
+  "keywords": ["aws", "cost", "alert", "monitoring", "lambda", "serverless", "typescript"],
+  "author": "s7muelss",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-cost-explorer": "^3.0.0",
+    "@aws-sdk/client-sns": "^3.0.0",
+    "commander": "^12.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "@types/jest": "^29.5.12",
+    "eslint": "^8.57.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
