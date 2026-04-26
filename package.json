@@ -10,7 +10,7 @@
     "build": "tsc",
     "dev": "ts-node src/cli/index.ts check",
     "lint": "eslint src/**/*.ts",
-    "test": "jest --coverage",
+    "test": "jest --coverage --passWithNoTests",
     "package": "npm run build && zip -r function.zip dist node_modules"
   },
   "keywords": ["aws", "cost", "alert", "monitoring", "lambda", "serverless", "typescript"],
@@ -34,3 +34,4 @@
     "typescript": "^5.4.5"
   }
 }
+
